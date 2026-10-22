@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Uma linha da pesquisa estimulada. Serve tanto para candidato quanto
+     para branco, nulo e não sei: nesses casos a foto e o partido somem. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:background="@drawable/bg_opcao"
+    android:clickable="true"
+    android:focusable="true"
+    android:gravity="center_vertical"
+    android:minHeight="60dp"
+    android:orientation="horizontal"
+    android:padding="12dp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivFoto"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_marginRight="14dp"
+        android:contentDescription="@string/cd_foto"
+        android:scaleType="centerCrop"
+        app:shapeAppearanceOverlay="@style/Foto.Arredondada"
+        tools:src="@drawable/candidato_1" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvNome"
+            style="@style/Texto.Opcao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Jorge Amado" />
+
+        <TextView
+            android:id="@+id/tvPartido"
+            style="@style/Texto.Apoio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Partido A" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/ivCheck"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:contentDescription="@string/cd_escolhido"
+        android:src="@drawable/ic_check"
+        android:visibility="invisible" />
+
+</LinearLayout>

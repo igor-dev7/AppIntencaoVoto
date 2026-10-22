@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">Intenção de Voto</string>
+
+    <!-- ===== Estimulada ===== -->
+    <string name="estimulada_titulo">Pesquisa Estimulada</string>
+    <string name="voto_branco">Branco</string>
+    <string name="voto_nulo">Nulo</string>
+    <string name="voto_nao_sei">Não sei</string>
+    <string name="cd_foto">Foto do candidato</string>
+    <string name="cd_escolhido">Escolhido</string>
+    <string name="erro_candidato">Escolha uma opção</string>
+
+    <!-- ===== Problemas ===== -->
+    <string name="problemas_titulo">Principais Problemas</string>
+    <string name="problema_saude">Saúde</string>
+    <string name="problema_educacao">Educação</string>
+    <string name="problema_transporte">Transporte</string>
+    <string name="problema_violencia">Violência</string>
+    <string name="problema_outro">Outro</string>
+    <string name="erro_problema">Marque ao menos um problema</string>
+
+    <!-- ===== Dados do entrevistado ===== -->
+    <string name="dados_titulo">Dados do Entrevistado</string>
+    <string name="dados_nome">Nome</string>
+    <string name="dados_celular">Celular</string>
+    <string name="dados_confirmar">Confirmar</string>
+    <string name="dados_finalizar">Finalizar</string>
+    <string name="erro_dados">Preencha nome e celular</string>
+    <string name="msg_salvo">Entrevista salva</string>
+    <string name="msg_confirme_antes">Confirme os dados antes de finalizar</string>
+
+    <!-- ===== Comum ===== -->
+    <string name="confirmar">Confirmar</string>
+    <string name="registro_titulo">Entrevista registrada</string>
+    <string name="registro_texto">Nome: %1$s\nCelular: %2$s\nVoto: %3$s\nProblemas: %4$s\nData e hora: %5$s\nPosição: %6$s</string>
+    <string name="formato_local">%1$.5f, %2$.5f</string>
+    <string name="local_indisponivel">Não disponível</string>
+    <string name="local_sem_permissao">Sem permissão de localização</string>
+    <string name="erro_outro">Descreva o outro problema</string>
+    <!-- ===== Ranking ===== -->
+    <string name="ranking_titulo">Ranking</string>
+    <string name="ranking_nova">Nova entrevista</string>
+    <plurals name="formato_entrevistas">
+        <item quantity="one">%d entrevista</item>
+        <item quantity="other">%d entrevistas</item>
+    </plurals>
+</resources>

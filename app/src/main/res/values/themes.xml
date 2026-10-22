@@ -1,0 +1,80 @@
+<resources>
+
+    <style name="Base.Theme.AppIntencaoVoto" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/tinta</item>
+        <item name="colorOnPrimary">@color/branco</item>
+        <item name="android:windowBackground">@color/fundo</item>
+        <item name="android:statusBarColor">@color/fundo</item>
+        <item name="android:navigationBarColor">@color/fundo</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:textColorPrimary">@color/tinta</item>
+        <item name="android:textColorHint">@color/texto_fraco</item>
+    </style>
+
+    <style name="Theme.AppIntencaoVoto" parent="Base.Theme.AppIntencaoVoto" />
+
+    <!-- ===== Tipografia ===== -->
+    <style name="Texto.Titulo" parent="">
+        <item name="android:textColor">@color/tinta</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Texto.Rotulo" parent="">
+        <item name="android:textColor">@color/texto_apoio</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="Texto.Opcao" parent="">
+        <item name="android:textColor">@color/tinta</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Texto.Apoio" parent="">
+        <item name="android:textColor">@color/texto_apoio</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:paddingTop">1dp</item>
+    </style>
+
+    <!-- ===== Foto do candidato com cantos arredondados ===== -->
+    <style name="Foto.Arredondada" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">8dp</item>
+    </style>
+
+    <!-- ===== Campo de texto ===== -->
+    <style name="Campo" parent="">
+        <item name="android:background">@drawable/bg_campo</item>
+        <item name="android:textColor">@color/tinta</item>
+        <item name="android:textColorHint">@color/texto_fraco</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:minHeight">54dp</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:importantForAutofill">no</item>
+    </style>
+
+    <!-- ===== Botões ===== -->
+    <style name="Botao.Principal" parent="Widget.Material3.Button">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:minHeight">54dp</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="backgroundTint">@color/tinta</item>
+        <item name="android:textColor">@color/branco</item>
+        <item name="elevation">0dp</item>
+    </style>
+
+    <style name="Botao.Secundario" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:minHeight">50dp</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="strokeColor">@color/borda</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="android:textColor">@color/tinta</item>
+    </style>
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Fundo e superfícies -->
+    <color name="fundo">#FFFFFFFF</color>
+    <color name="superficie">#FFF6F6F7</color>
+    <color name="borda">#FFE3E3E6</color>
+
+    <!-- Texto -->
+    <color name="tinta">#FF111113</color>
+    <color name="texto_apoio">#FF68686F</color>
+    <color name="texto_fraco">#FF97979E</color>
+    <color name="branco">#FFFFFFFF</color>
+
+    <!-- Estados -->
+    <color name="positivo">#FF14683B</color>
+</resources>

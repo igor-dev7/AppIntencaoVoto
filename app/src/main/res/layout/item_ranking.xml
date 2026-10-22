@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Uma posição do ranking: foto, nome, barra de proporção e total de votos. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:background="@drawable/bg_opcao_normal"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="14dp">
+
+    <TextView
+        android:id="@+id/tvPosicao"
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/texto_fraco"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        tools:text="1" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivFoto"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:layout_marginRight="12dp"
+        android:contentDescription="@string/cd_foto"
+        android:scaleType="centerCrop"
+        app:shapeAppearanceOverlay="@style/Foto.Arredondada"
+        tools:src="@drawable/candidato_1" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvNome"
+            style="@style/Texto.Opcao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Ayrton Senna" />
+
+        <TextView
+            android:id="@+id/tvPartido"
+            style="@style/Texto.Apoio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Partido B" />
+
+        <!-- Trilho da barra: a parte cheia cresce conforme os votos -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_barra_trilho"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <View
+                android:id="@+id/vPreenchida"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_barra" />
+
+            <View
+                android:id="@+id/vRestante"
+                android:layout_width="0dp"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvVotos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:textColor="@color/tinta"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:text="12" />
+
+</LinearLayout>
