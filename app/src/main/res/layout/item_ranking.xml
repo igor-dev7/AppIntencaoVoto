@@ -11,6 +11,14 @@
     android:orientation="horizontal"
     android:padding="14dp">
 
+    <View
+        android:id="@+id/vCor"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/bg_ponto"
+        tools:background="@color/tinta" />
+
     <TextView
         android:id="@+id/tvPosicao"
         android:layout_width="30dp"
@@ -24,7 +32,7 @@
         android:id="@+id/ivFoto"
         android:layout_width="46dp"
         android:layout_height="46dp"
-        android:layout_marginRight="12dp"
+        android:layout_marginEnd="12dp"
         android:contentDescription="@string/cd_foto"
         android:scaleType="centerCrop"
         app:shapeAppearanceOverlay="@style/Foto.Arredondada"
@@ -74,14 +82,29 @@
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/tvVotos"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="12dp"
-        android:textColor="@color/tinta"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        tools:text="12" />
+        android:layout_marginStart="12dp"
+        android:gravity="end"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvVotos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/tinta"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="12" />
+
+        <TextView
+            android:id="@+id/tvPercentual"
+            style="@style/Texto.Apoio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="50%" />
+
+    </LinearLayout>
 
 </LinearLayout>

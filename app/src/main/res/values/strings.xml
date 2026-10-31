@@ -24,6 +24,7 @@
     <string name="dados_nome">Nome</string>
     <string name="dados_celular">Celular</string>
     <string name="dados_confirmar">Confirmar</string>
+    <string name="dados_obtendo_local">Obtendo localização…</string>
     <string name="dados_finalizar">Finalizar</string>
     <string name="erro_dados">Preencha nome e celular</string>
     <string name="msg_salvo">Entrevista salva</string>
@@ -32,9 +33,10 @@
     <!-- ===== Comum ===== -->
     <string name="confirmar">Confirmar</string>
     <string name="registro_titulo">Entrevista registrada</string>
-    <string name="registro_texto">Nome: %1$s\nCelular: %2$s\nVoto: %3$s\nProblemas: %4$s\nData e hora: %5$s\nPosição: %6$s</string>
-    <string name="formato_local">%1$.5f, %2$.5f</string>
+    <string name="registro_texto">Nome: %1$s\nCelular: %2$s\nEspontânea: %3$s\nVoto: %4$s\nProblemas: %5$s\nData e hora: %6$s\nCidade: %7$s\nEndereço: %8$s\nPosição: %9$s</string>
     <string name="local_indisponivel">Não disponível</string>
+    <string name="local_desligado">Localização desligada no aparelho</string>
+    <string name="local_sem_endereco">Endereço não encontrado</string>
     <string name="local_sem_permissao">Sem permissão de localização</string>
     <string name="erro_outro">Descreva o outro problema</string>
     <!-- ===== Ranking ===== -->
@@ -44,4 +46,48 @@
         <item quantity="one">%d entrevista</item>
         <item quantity="other">%d entrevistas</item>
     </plurals>
+    <string name="local_sem_cidade">Cidade não identificada</string>
+    <!-- ===== Carregamento ===== -->
+    <string name="splash_titulo">Intenção de Voto</string>
+    <string name="splash_subtitulo">Eleições 2026</string>
+
+    <!-- ===== Login ===== -->
+    <string name="login_titulo">Entrar</string>
+    <string name="login_usuario">Usuário</string>
+    <string name="login_senha">Senha</string>
+    <string name="login_acessar">Acessar</string>
+    <string name="login_finalizar">Finalizar</string>
+    <string name="login_erro_vazio">Preencha usuário e senha</string>
+    <string name="login_erro_invalido">Usuário ou senha inválido(s)</string>
+
+    <!-- ===== Espontânea ===== -->
+    <string name="espontanea_eleicoes">Eleições 2026</string>
+    <string name="espontanea_pesquisa">Pesquisa de intenção</string>
+    <string name="espontanea_titulo">Pesquisa Espontânea</string>
+    <string name="espontanea_pergunta">Em quem você votaria para presidente?</string>
+    <string name="espontanea_ajuda">Anote o nome como o entrevistado falou, sem sugerir opções.</string>
+    <string name="erro_espontanea">Escreva a resposta do entrevistado</string>
+
+    <!-- ===== Admin ===== -->
+    <string name="admin_titulo">Resultado da Pesquisa</string>
+    <string name="admin_total">Quant. de pessoas entrevistadas: %1$d</string>
+    <string name="admin_eleitores">Eleitores</string>
+    <string name="admin_resultado">Resultado</string>
+    <string name="admin_limpar">Limpar dados</string>
+    <string name="admin_limpar_pergunta">Isso apaga todas as entrevistas e a contagem de votos. Não dá para desfazer.</string>
+    <string name="admin_limpar_confirmar">Apagar tudo</string>
+    <string name="admin_cancelar">Cancelar</string>
+    <string name="admin_limpo">Dados apagados</string>
+
+    <!-- ===== Eleitores ===== -->
+    <string name="eleitor_cidade">Cidade</string>
+    <string name="eleitor_data_hora">Data e hora</string>
+    <string name="eleitor_localizacao">Localização</string>
+
+    <!-- ===== Resultado ===== -->
+    <string name="ranking_votos_por_candidato">Quant. de votos para cada candidato:</string>
+    <string name="ranking_grafico">Votos</string>
+    <string name="formato_percentual">%1$.1f%%</string>
+    <string name="voltar">Voltar</string>
+    <string name="sair">Sair</string>
 </resources>

@@ -1,11 +1,8 @@
 package com.example.appintencaovoto
 
 import android.Manifest
-import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.location.Location
-import android.location.LocationManager
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -18,8 +15,8 @@ import java.util.Date
 import java.util.Locale
 
 /**
- * Dados do entrevistado. Ao confirmar, grava a entrevista com a data e hora
- * do aparelho e a posição geográfica, junto com o voto e os problemas.
+ * Dados do entrevistado. Ao confirmar, lê a posição no GPS e grava a entrevista
+ * com a data e hora do aparelho, o endereço e a coordenada, o voto e os problemas.
  */
 class DadosActivity : AppCompatActivity() {
 
@@ -48,47 +45,48 @@ class DadosActivity : AppCompatActivity() {
             return // Para a execução do código aqui
         }
 
-        val voto = intent.getStringExtra(EstimuladaActivity.EXTRA_VOTO) ?: ""
-        val problemas = intent.getStringExtra(ProblemasActivity.EXTRA_PROBLEMAS) ?: ""
-        val momento = SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault()).format(Date())
-        val local = posicaoGeografica()
+        // A leitura do GPS demora, então o botão avisa enquanto ela acontece
+        binding.btConfirmar.isEnabled = false
+        binding.btConfirmar.setText(R.string.dados_obtendo_local)
 
-        val registro =
-            getString(R.string.registro_texto, nome, celular, voto, problemas, momento, local)
+        Localizacao.obter(this) { local ->
+            gravar(nome, celular, local)
+            binding.btConfirmar.isEnabled = true
+            binding.btConfirmar.setText(R.string.dados_confirmar)
+        }
+    }
 
-        // Guarda a entrevista e soma o voto para o ranking
-        Pesquisa.registrar(this, momento, registro, voto)
+    private fun gravar(nome: String, celular: String, local: Local) {
+        val entrevista = Entrevista(
+            nome = nome,
+            celular = celular,
+            espontanea = intent.getStringExtra(EspontaneaActivity.EXTRA_ESPONTANEA) ?: "",
+            voto = intent.getStringExtra(EstimuladaActivity.EXTRA_VOTO) ?: "",
+            problemas = intent.getStringExtra(ProblemasActivity.EXTRA_PROBLEMAS) ?: "",
+            dataHora = SimpleDateFormat("dd/MM/yyyy HH:mm", Locale.getDefault()).format(Date()),
+            cidade = local.cidade,
+            endereco = local.endereco,
+            coordenada = local.coordenada
+        )
 
-        binding.tvRegistro.text = registro
+        Pesquisa.registrar(this, entrevista)
+
+        binding.tvRegistro.text = getString(
+            R.string.registro_texto,
+            entrevista.nome,
+            entrevista.celular,
+            entrevista.espontanea,
+            entrevista.voto,
+            entrevista.problemas,
+            entrevista.dataHora,
+            entrevista.cidade,
+            entrevista.endereco,
+            entrevista.coordenada
+        )
         binding.blocoRegistro.visibility = View.VISIBLE
         confirmado = true
 
         Toast.makeText(this, R.string.msg_salvo, Toast.LENGTH_SHORT).show()
-    }
-
-    /** Última posição conhecida do aparelho. Devolve um aviso quando não há. */
-    private fun posicaoGeografica(): String {
-        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
-            != PackageManager.PERMISSION_GRANTED
-        ) {
-            return getString(R.string.local_sem_permissao)
-        }
-
-        val gerente = getSystemService(Context.LOCATION_SERVICE) as LocationManager
-        var posicao: Location? = null
-        for (fonte in listOf(LocationManager.GPS_PROVIDER, LocationManager.NETWORK_PROVIDER)) {
-            try {
-                posicao = posicao ?: gerente.getLastKnownLocation(fonte)
-            } catch (erro: SecurityException) {
-                return getString(R.string.local_sem_permissao)
-            }
-        }
-
-        return if (posicao == null) {
-            getString(R.string.local_indisponivel)
-        } else {
-            getString(R.string.formato_local, posicao.latitude, posicao.longitude)
-        }
     }
 
     private fun pedirPermissaoDeLocalizacao() {
@@ -106,15 +104,16 @@ class DadosActivity : AppCompatActivity() {
         }
     }
 
-    /** Encerra a entrevista e mostra o ranking com os votos acumulados. */
+    /** Fecha esta entrevista e volta para a espontânea, pronto para a próxima. */
     private fun finalizar() {
         if (!confirmado) {
             Toast.makeText(this, R.string.msg_confirme_antes, Toast.LENGTH_SHORT).show()
             return
         }
 
-        startActivity(Intent(this, RankingActivity::class.java))
-        finish()
+        val proxima = Intent(this, EspontaneaActivity::class.java)
+        proxima.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+        startActivity(proxima)
     }
 
     companion object {

@@ -79,6 +79,10 @@ class EstimuladaActivity : AppCompatActivity() {
         }
 
         val telaProblemas = Intent(this, ProblemasActivity::class.java)
+        telaProblemas.putExtra(
+            EspontaneaActivity.EXTRA_ESPONTANEA,
+            intent.getStringExtra(EspontaneaActivity.EXTRA_ESPONTANEA)
+        )
         telaProblemas.putExtra(EXTRA_VOTO, escolha.texto)
         startActivity(telaProblemas)
     }

@@ -15,9 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppIntencaoVoto">
 
-        <!-- Pesquisa estimulada: primeira das três telas -->
+        <!-- Tela de carregamento: é por onde o app abre -->
         <activity
-            android:name=".EstimuladaActivity"
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,6 +25,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Login: decide entre o fluxo do entrevistador e o do admin -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- ===== Fluxo do entrevistador ===== -->
+        <activity
+            android:name=".EspontaneaActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".EstimuladaActivity"
+            android:exported="false"
+            android:parentActivityName=".EspontaneaActivity" />
 
         <activity
             android:name=".ProblemasActivity"
@@ -36,11 +53,22 @@
             android:exported="false"
             android:parentActivityName=".ProblemasActivity"
             android:windowSoftInputMode="adjustResize" />
-        <!-- Ranking com os votos acumulados, última tela do fluxo -->
+
+        <!-- ===== Fluxo do admin ===== -->
+        <activity
+            android:name=".AdminActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".EleitoresActivity"
+            android:exported="false"
+            android:parentActivityName=".AdminActivity" />
+
+        <!-- Votos de cada opção, com percentual e gráfico -->
         <activity
             android:name=".RankingActivity"
             android:exported="false"
-            android:parentActivityName=".EstimuladaActivity" />
+            android:parentActivityName=".AdminActivity" />
     </application>
 
 </manifest>

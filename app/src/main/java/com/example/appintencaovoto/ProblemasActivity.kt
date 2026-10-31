@@ -57,6 +57,10 @@ class ProblemasActivity : AppCompatActivity() {
 
         val telaDados = Intent(this, DadosActivity::class.java)
         telaDados.putExtra(
+            EspontaneaActivity.EXTRA_ESPONTANEA,
+            intent.getStringExtra(EspontaneaActivity.EXTRA_ESPONTANEA)
+        )
+        telaDados.putExtra(
             EstimuladaActivity.EXTRA_VOTO,
             intent.getStringExtra(EstimuladaActivity.EXTRA_VOTO)
         )

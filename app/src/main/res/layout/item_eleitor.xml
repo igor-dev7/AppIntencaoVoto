@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Ficha de um entrevistado: os dados que o admin precisa ver. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:background="@drawable/bg_cartao"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        style="@style/Texto.Rotulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/dados_nome" />
+
+    <TextView
+        android:id="@+id/tvNome"
+        style="@style/Texto.Opcao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Maria da Silva" />
+
+    <TextView
+        style="@style/Texto.Rotulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="12dp"
+        android:text="@string/dados_celular" />
+
+    <TextView
+        android:id="@+id/tvCelular"
+        style="@style/Texto.Opcao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="(11) 99999-0000" />
+
+    <TextView
+        style="@style/Texto.Rotulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="12dp"
+        android:text="@string/eleitor_cidade" />
+
+    <TextView
+        android:id="@+id/tvCidade"
+        style="@style/Texto.Opcao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="São Paulo" />
+
+    <TextView
+        style="@style/Texto.Rotulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="12dp"
+        android:text="@string/eleitor_data_hora" />
+
+    <TextView
+        android:id="@+id/tvDataHora"
+        style="@style/Texto.Opcao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="28/10/2026 14:30" />
+
+    <TextView
+        style="@style/Texto.Rotulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="12dp"
+        android:text="@string/eleitor_localizacao" />
+
+    <TextView
+        android:id="@+id/tvLocalizacao"
+        style="@style/Texto.Opcao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="-23.56789, -46.65432" />
+
+</LinearLayout>

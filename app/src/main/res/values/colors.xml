@@ -11,6 +11,4 @@
     <color name="texto_fraco">#FF97979E</color>
     <color name="branco">#FFFFFFFF</color>
 
-    <!-- Estados -->
-    <color name="positivo">#FF14683B</color>
 </resources>

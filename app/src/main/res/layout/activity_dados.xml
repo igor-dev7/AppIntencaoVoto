@@ -5,7 +5,6 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/fundo"
     tools:context=".DadosActivity">
 
     <ScrollView
@@ -22,9 +21,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingLeft="20dp"
+            android:paddingStart="20dp"
             android:paddingTop="40dp"
-            android:paddingRight="20dp"
+            android:paddingEnd="20dp"
             android:paddingBottom="16dp">
 
             <TextView
@@ -38,6 +37,7 @@
                 style="@style/Texto.Rotulo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:labelFor="@+id/etNome"
                 android:paddingBottom="7dp"
                 android:text="@string/dados_nome" />
 
@@ -46,6 +46,7 @@
                 style="@style/Campo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:autofillHints="name"
                 android:inputType="textPersonName|textCapWords" />
 
             <TextView
@@ -53,6 +54,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="18dp"
+                android:labelFor="@+id/etCelular"
                 android:paddingBottom="7dp"
                 android:text="@string/dados_celular" />
 
@@ -61,6 +63,7 @@
                 style="@style/Campo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:autofillHints="phone"
                 android:imeOptions="actionDone"
                 android:inputType="phone" />
 
@@ -109,8 +112,8 @@
         style="@style/Botao.Principal"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
         android:text="@string/dados_finalizar"
         app:layout_constraintBottom_toBottomOf="parent"

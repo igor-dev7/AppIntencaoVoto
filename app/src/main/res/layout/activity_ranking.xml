@@ -5,7 +5,6 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/fundo"
     tools:context=".RankingActivity">
 
     <ScrollView
@@ -13,7 +12,7 @@
         android:layout_height="0dp"
         android:fillViewport="true"
         android:scrollbars="none"
-        app:layout_constraintBottom_toTopOf="@+id/btNovaEntrevista"
+        app:layout_constraintBottom_toTopOf="@+id/btVoltar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -22,9 +21,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingLeft="20dp"
+            android:paddingStart="20dp"
             android:paddingTop="40dp"
-            android:paddingRight="20dp"
+            android:paddingEnd="20dp"
             android:paddingBottom="16dp">
 
             <TextView
@@ -39,8 +38,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="6dp"
-                android:paddingBottom="22dp"
-                tools:text="8 entrevistas" />
+                tools:text="Quant. de pessoas entrevistadas: 8" />
+
+            <TextView
+                style="@style/Texto.Rotulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="22dp"
+                android:paddingBottom="12dp"
+                android:text="@string/ranking_votos_por_candidato" />
 
             <!-- As posições entram aqui pela RankingActivity -->
             <LinearLayout
@@ -49,18 +55,49 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical" />
 
+            <TextView
+                style="@style/Texto.Rotulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="22dp"
+                android:paddingBottom="12dp"
+                android:text="@string/ranking_grafico" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.example.appintencaovoto.GraficoPizzaView
+                    android:id="@+id/grafico"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <!-- A legenda entra aqui pela RankingActivity -->
+                <LinearLayout
+                    android:id="@+id/legenda"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical" />
+
+            </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btNovaEntrevista"
+        android:id="@+id/btVoltar"
         style="@style/Botao.Principal"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
-        android:text="@string/ranking_nova"
+        android:text="@string/voltar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
